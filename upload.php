@@ -58,10 +58,7 @@ try {
             continue;
         }
 
-        // Check if the row has enough elements before attempting to access them
         if (count($row) < 6) {
-            // Handle the case where the row doesn't have enough elements
-            // You might log an error, skip the row, or handle it in another way
             continue;
         }
 
@@ -78,8 +75,8 @@ try {
     echo "Error: " . $e->getMessage();
 
     if (isset($db)) {
-        $db->exec('ROLLBACK'); // Roll back changes if an error occurs
-        $db->close(); // Close the database connection
+        $db->exec('ROLLBACK'); 
+        $db->close(); 
     }
 } finally {
         $db->close(); 
